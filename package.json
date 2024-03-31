@@ -2,12 +2,12 @@
   "name": "near-sandbox",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "test": "vitest"
+    "build": "tsc",
+    "dev": "tsx watch server/index.mts",
+    "lint": "eslint --cache --ext \".js,.ts,.tsx\" index.ts",
+    "start": "node dist/server/index.mjs"
   },
   "dependencies": {
     "@bitcoinerlab/secp256k1": "^1.1.1",
