@@ -3,7 +3,6 @@ import axios from "axios";
 import { signMPC } from "../contract/signer";
 import { ethers } from "ethers";
 import { Account } from "near-api-js";
-import Link from "@/components/Link";
 import { toast } from "react-toastify";
 import { KeyDerivation } from "../kdf";
 
@@ -409,19 +408,6 @@ export class Bitcoin {
       proxy: true,
     });
 
-    if (txid) {
-      toast.success(
-        <span>
-          View on {this.name}:{" "}
-          <Link
-            href={`${this.scanUrl}/tx/${txid}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Transaction Details
-          </Link>
-        </span>
-      );
-    }
+
   }
 }
